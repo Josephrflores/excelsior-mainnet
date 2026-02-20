@@ -1,0 +1,27 @@
+nohup: ignoring input
+yarn run v1.22.22
+$ /home/itsroosevelt_/excelsior-project/landing-page/node_modules/.bin/next dev -H 127.0.0.1 -p 3001
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/itsroosevelt_/excelsior-project/yarn.lock as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/itsroosevelt_/excelsior-project/landing-page/yarn.lock
+
+▲ Next.js 16.1.4 (Turbopack)
+- Local:         http://127.0.0.1:3001
+- Network:       http://127.0.0.1:3001
+- Environments: .env.local
+
+✓ Starting...
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Ready in 6s
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(85%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(85%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET /es 200 in 5.8s (compile: 4.6s, proxy.ts: 13ms, render: 1210ms)

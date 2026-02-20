@@ -1,0 +1,18 @@
+/home/itsroosevelt_/excelsior-project/smart-contracts/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+scripts/apply_config_and_distribution.ts(25,17): error TS2353: Object literal may only specify known properties, and 'admin' does not exist in type 'ResolvedAccounts<{ name: "admin"; writable: true; signer: true; relations: ["globalConfig"]; } | { name: "globalConfig"; writable: true; pda: { seeds: [{ kind: "const"; value: [103, 108, 111, 98, 97, 108, 95, ... 5 more ..., 103]; }]; }; } | ... 13 more ... | { ...; }>'.
+
+    at createTSError (/home/itsroosevelt_/excelsior-project/smart-contracts/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/itsroosevelt_/excelsior-project/smart-contracts/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/itsroosevelt_/excelsior-project/smart-contracts/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/itsroosevelt_/excelsior-project/smart-contracts/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/itsroosevelt_/excelsior-project/smart-contracts/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1893:10
+    at Object.require.extensions.<computed> [as .ts] (/home/itsroosevelt_/excelsior-project/smart-contracts/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2353 ]
+}

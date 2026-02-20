@@ -1,0 +1,13 @@
+nohup: ignoring input
+
+> web-public@0.1.0 dev
+> next dev --port 3001
+
+▲ Next.js 16.1.4 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://10.255.255.254:3001
+- Environments: .env.local
+
+✓ Starting...
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Ready in 2.3s

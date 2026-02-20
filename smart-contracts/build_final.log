@@ -1,0 +1,385 @@
+WARNING: Adding `solana-program` as a separate dependency might cause conflicts.
+To solve, remove the `solana-program` dependency and use the exported crate from `anchor-lang`.
+`use solana_program` becomes `use anchor_lang::solana_program`.
+Program name: `excelsior`
+
+   Compiling excelsior v0.1.0 (/home/itsroosevelt_/excelsior-project/smart-contracts/programs/excelsior)
+error[E0432]: unresolved import `crate`
+  --> src/lib.rs:18:1
+   |
+18 | #[program]
+   | ^^^^^^^^^^
+   | |
+   | unresolved import
+   | help: a similar path exists: `instructions::usdx_ops::__client_accounts_mint_usdx`
+   |
+   = note: this error originates in the attribute macro `program` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `custom-heap`
+  --> src/lib.rs:18:1
+   |
+18 | #[program]
+   | ^^^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `custom-heap` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: `#[warn(unexpected_cfgs)]` on by default
+   = note: this warning originates in the macro `$crate::custom_heap_default` which comes from the expansion of the attribute macro `program` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `custom-panic`
+  --> src/lib.rs:18:1
+   |
+18 | #[program]
+   | ^^^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `custom-panic` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the macro `$crate::custom_panic_default` which comes from the expansion of the attribute macro `program` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+ --> src/instructions/init_ix.rs:4:10
+  |
+4 | #[derive(Accounts)]
+  |          ^^^^^^^^
+  |
+  = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+  = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unused import: `Burn`
+ --> src/instructions/swap.rs:2:94
+  |
+2 | use anchor_spl::token_interface::{self, Mint, TokenAccount, TokenInterface, TransferChecked, Burn};
+  |                                                                                              ^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+ --> src/instructions/swap.rs:7:10
+  |
+7 | #[derive(Accounts)]
+  |          ^^^^^^^^
+  |
+  = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+  = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/swap.rs:46:10
+   |
+46 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+ --> src/instructions/stake.rs:5:10
+  |
+5 | #[derive(Accounts)]
+  |          ^^^^^^^^
+  |
+  = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+  = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/stake.rs:22:10
+   |
+22 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/stake.rs:61:10
+   |
+61 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+ --> src/instructions/fees.rs:5:10
+  |
+5 | #[derive(Accounts)]
+  |          ^^^^^^^^
+  |
+  = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+  = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unused import: `chainlink_solana as chainlink`
+ --> src/instructions/oracle_utils.rs:3:5
+  |
+3 | use chainlink_solana as chainlink;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+ --> src/instructions/usdx_ops.rs:6:10
+  |
+6 | #[derive(Accounts)]
+  |          ^^^^^^^^
+  |
+  = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+  = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/usdx_ops.rs:78:10
+   |
+78 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+ --> src/instructions/rewards.rs:5:10
+  |
+5 | #[derive(Accounts)]
+  |          ^^^^^^^^
+  |
+  = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+  = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/rewards.rs:24:10
+   |
+24 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+ --> src/instructions/admin_ops.rs:5:10
+  |
+5 | #[derive(Accounts)]
+  |          ^^^^^^^^
+  |
+  = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+  = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/admin_ops.rs:49:10
+   |
+49 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/admin_ops.rs:74:10
+   |
+74 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+   --> src/instructions/admin_ops.rs:146:10
+    |
+146 | #[derive(Accounts)]
+    |          ^^^^^^^^
+    |
+    = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+    = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+   --> src/instructions/admin_ops.rs:238:10
+    |
+238 | #[derive(Accounts)]
+    |          ^^^^^^^^
+    |
+    = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+    = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+   --> src/instructions/admin_ops.rs:330:10
+    |
+330 | #[derive(Accounts)]
+    |          ^^^^^^^^
+    |
+    = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+    = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+   --> src/instructions/admin_ops.rs:344:10
+    |
+344 | #[derive(Accounts)]
+    |          ^^^^^^^^
+    |
+    = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+    = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+   --> src/instructions/admin_ops.rs:372:10
+    |
+372 | #[derive(Accounts)]
+    |          ^^^^^^^^
+    |
+    = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+    = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+   --> src/instructions/admin_ops.rs:490:10
+    |
+490 | #[derive(Accounts)]
+    |          ^^^^^^^^
+    |
+    = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+    = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+   --> src/instructions/admin_ops.rs:514:10
+    |
+514 | #[derive(Accounts)]
+    |          ^^^^^^^^
+    |
+    = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+    = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+ --> src/instructions/access_control.rs:5:10
+  |
+5 | #[derive(Accounts)]
+  |          ^^^^^^^^
+  |
+  = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+  = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/access_control.rs:22:10
+   |
+22 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/access_control.rs:35:10
+   |
+35 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+ --> src/instructions/vesting.rs:5:10
+  |
+5 | #[derive(Accounts)]
+  |          ^^^^^^^^
+  |
+  = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+  = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/instructions/vesting.rs:42:10
+   |
+42 | #[derive(Accounts)]
+   |          ^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unused import: `instructions::admin_ops::*`
+  --> src/lib.rs:12:5
+   |
+12 | use instructions::admin_ops::*;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/lib.rs:18:1
+   |
+18 | #[program]
+   | ^^^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the attribute macro `program` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `anchor-debug`
+  --> src/lib.rs:18:1
+   |
+18 | #[program]
+   | ^^^^^^^^^^
+   |
+   = note: expected values for `feature` are: `cpi`, `default`, `idl-build`, `no-entrypoint`, `no-idl`, and `no-log-ix-name`
+   = help: consider adding `anchor-debug` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `Accounts` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unused variable: `price_data`
+  --> src/instructions/oracle_utils.rs:16:9
+   |
+16 |     let price_data = pyth_account.try_borrow_data()?;
+   |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_price_data`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `current_time`
+   --> src/instructions/admin_ops.rs:443:9
+    |
+443 |     let current_time = clock.unix_timestamp;
+    |         ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_time`
+
+For more information about this error, try `rustc --explain E0432`.
+warning: `excelsior` (lib) generated 40 warnings (5 duplicates)
+error: could not compile `excelsior` (lib) due to 1 previous error; 40 warnings emitted

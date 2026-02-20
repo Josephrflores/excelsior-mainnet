@@ -1,0 +1,2779 @@
+{
+  "address": "BqmCp11bN5aDF6XdCEEnLUZroxTPMod6xrap78zKmvap",
+  "metadata": {
+    "name": "excelsior",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "buy_xls",
+      "discriminator": [
+        27,
+        158,
+        17,
+        1,
+        181,
+        30,
+        55,
+        144
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "access_control",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  95,
+                  99,
+                  111,
+                  110,
+                  116,
+                  114,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_lxr_account",
+          "writable": true
+        },
+        {
+          "name": "user_xls_account",
+          "writable": true
+        },
+        {
+          "name": "xls_vault_supply",
+          "writable": true
+        },
+        {
+          "name": "rwa_vault_lxr",
+          "writable": true
+        },
+        {
+          "name": "xls_mint"
+        },
+        {
+          "name": "lxr_mint",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount_xls",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "claim_reward",
+      "discriminator": [
+        149,
+        95,
+        181,
+        242,
+        94,
+        90,
+        158,
+        162
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "distributor",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  105,
+                  115,
+                  116,
+                  114,
+                  105,
+                  98,
+                  117,
+                  116,
+                  111,
+                  114
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "claim_status",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  108,
+                  97,
+                  105,
+                  109,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  117,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "distributor"
+              },
+              {
+                "kind": "arg",
+                "path": "index"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_token_account",
+          "writable": true
+        },
+        {
+          "name": "distributor_vault",
+          "writable": true
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "index",
+          "type": "u64"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "proof",
+          "type": {
+            "vec": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "claim_vested",
+      "discriminator": [
+        208,
+        190,
+        166,
+        114,
+        203,
+        225,
+        140,
+        208
+      ],
+      "accounts": [
+        {
+          "name": "beneficiary",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "vesting_schedule"
+          ]
+        },
+        {
+          "name": "vesting_schedule",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  101,
+                  115,
+                  116,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "beneficiary"
+              },
+              {
+                "kind": "account",
+                "path": "mint"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint",
+          "relations": [
+            "vesting_schedule"
+          ]
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "relations": [
+            "vesting_schedule"
+          ]
+        },
+        {
+          "name": "beneficiary_token_account",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "create_vesting",
+      "discriminator": [
+        135,
+        184,
+        171,
+        156,
+        197,
+        162,
+        246,
+        44
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "vesting_schedule",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  101,
+                  115,
+                  116,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "beneficiary"
+              },
+              {
+                "kind": "account",
+                "path": "mint"
+              }
+            ]
+          }
+        },
+        {
+          "name": "beneficiary"
+        },
+        {
+          "name": "mint",
+          "writable": true
+        },
+        {
+          "name": "vesting_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  101,
+                  115,
+                  116,
+                  105,
+                  110,
+                  103,
+                  95,
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vesting_schedule"
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin_token_account",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "start",
+          "type": "i64"
+        },
+        {
+          "name": "cliff",
+          "type": "i64"
+        },
+        {
+          "name": "end",
+          "type": "i64"
+        },
+        {
+          "name": "tge_percentage",
+          "type": "u16"
+        },
+        {
+          "name": "is_private_investor",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "distribute_rent",
+      "discriminator": [
+        69,
+        239,
+        67,
+        161,
+        60,
+        60,
+        4,
+        196
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin_usdx_account",
+          "writable": true
+        },
+        {
+          "name": "water_wallet",
+          "writable": true
+        },
+        {
+          "name": "data_latency_wallet",
+          "writable": true
+        },
+        {
+          "name": "energy_grid_wallet",
+          "writable": true
+        },
+        {
+          "name": "chips_wallet",
+          "writable": true
+        },
+        {
+          "name": "talent_wallet",
+          "writable": true
+        },
+        {
+          "name": "community_yield_wallet",
+          "writable": true
+        },
+        {
+          "name": "operations_wallet",
+          "writable": true
+        },
+        {
+          "name": "holding_wallet",
+          "writable": true
+        },
+        {
+          "name": "founder_wallet",
+          "writable": true
+        },
+        {
+          "name": "reinvestment_wallet",
+          "writable": true
+        },
+        {
+          "name": "usdx_mint"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "emergency_pause",
+      "discriminator": [
+        21,
+        143,
+        27,
+        142,
+        200,
+        181,
+        210,
+        255
+      ],
+      "accounts": [
+        {
+          "name": "access_control",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  95,
+                  99,
+                  111,
+                  110,
+                  116,
+                  114,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "signer",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "pause",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "execute_withdrawal",
+      "discriminator": [
+        113,
+        121,
+        203,
+        232,
+        137,
+        139,
+        248,
+        249
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config",
+            "withdrawal_request"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "withdrawal_request",
+          "writable": true
+        },
+        {
+          "name": "source_vault",
+          "writable": true
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "lxr_mint"
+        },
+        {
+          "name": "pyth_oracle",
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "chainlink_oracle",
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "grant_operator",
+      "discriminator": [
+        200,
+        86,
+        157,
+        171,
+        113,
+        109,
+        157,
+        195
+      ],
+      "accounts": [
+        {
+          "name": "access_control",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  95,
+                  99,
+                  111,
+                  110,
+                  116,
+                  114,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true,
+          "relations": [
+            "access_control"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "new_operator",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "harvest_fees",
+      "discriminator": [
+        90,
+        149,
+        158,
+        241,
+        163,
+        186,
+        155,
+        202
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "lxr_mint",
+          "writable": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "rwa_vault_lxr",
+          "writable": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "fee_excelsior_vault",
+          "writable": true
+        },
+        {
+          "name": "fee_stable_reserve",
+          "writable": true
+        },
+        {
+          "name": "fee_founder_wallet",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "init_access_control",
+      "discriminator": [
+        237,
+        34,
+        88,
+        108,
+        253,
+        168,
+        15,
+        34
+      ],
+      "accounts": [
+        {
+          "name": "access_control",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  95,
+                  99,
+                  111,
+                  110,
+                  116,
+                  114,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "init_distributor",
+      "discriminator": [
+        4,
+        170,
+        72,
+        1,
+        58,
+        177,
+        150,
+        43
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "distributor",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  105,
+                  115,
+                  116,
+                  114,
+                  105,
+                  98,
+                  117,
+                  116,
+                  111,
+                  114
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "root",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "init_user",
+      "discriminator": [
+        14,
+        51,
+        68,
+        159,
+        237,
+        78,
+        158,
+        102
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  117,
+                  115,
+                  101,
+                  114,
+                  95,
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "rwa_wallet"
+        },
+        {
+          "name": "founder_wallet"
+        },
+        {
+          "name": "water_wallet"
+        },
+        {
+          "name": "data_latency_wallet"
+        },
+        {
+          "name": "energy_grid_wallet"
+        },
+        {
+          "name": "chips_wallet"
+        },
+        {
+          "name": "talent_wallet"
+        },
+        {
+          "name": "community_yield_wallet"
+        },
+        {
+          "name": "operations_wallet"
+        },
+        {
+          "name": "holding_wallet"
+        },
+        {
+          "name": "reinvestment_wallet"
+        },
+        {
+          "name": "buyback_wallet"
+        },
+        {
+          "name": "fee_excelsior_vault"
+        },
+        {
+          "name": "fee_stable_reserve"
+        },
+        {
+          "name": "fee_founder_wallet"
+        },
+        {
+          "name": "xls_mint"
+        },
+        {
+          "name": "lxr_mint"
+        },
+        {
+          "name": "rwa_vault_lxr"
+        },
+        {
+          "name": "xls_vault_supply"
+        },
+        {
+          "name": "lxr_vault_rewards"
+        },
+        {
+          "name": "usdx_mint"
+        },
+        {
+          "name": "usdx_reserve"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "InitParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "manual_burn",
+      "discriminator": [
+        235,
+        238,
+        100,
+        32,
+        206,
+        157,
+        250,
+        102
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "lxr_mint",
+          "writable": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "burn_from_account",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "mint_usdx",
+      "discriminator": [
+        134,
+        52,
+        231,
+        146,
+        196,
+        136,
+        161,
+        218
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_collateral",
+          "writable": true
+        },
+        {
+          "name": "user_usdx",
+          "writable": true
+        },
+        {
+          "name": "usdx_reserve",
+          "writable": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "usdx_mint",
+          "writable": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "redeem_usdx",
+      "discriminator": [
+        148,
+        20,
+        143,
+        187,
+        236,
+        60,
+        254,
+        18
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_collateral",
+          "writable": true
+        },
+        {
+          "name": "user_usdx",
+          "writable": true
+        },
+        {
+          "name": "usdx_reserve",
+          "writable": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "usdx_mint",
+          "writable": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "redeem_xls",
+      "discriminator": [
+        106,
+        22,
+        248,
+        190,
+        63,
+        29,
+        65,
+        12
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "access_control",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  95,
+                  99,
+                  111,
+                  110,
+                  116,
+                  114,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_lxr_account",
+          "writable": true
+        },
+        {
+          "name": "user_xls_account",
+          "writable": true
+        },
+        {
+          "name": "xls_vault_supply",
+          "writable": true
+        },
+        {
+          "name": "rwa_vault_lxr",
+          "writable": true
+        },
+        {
+          "name": "governance_vault",
+          "writable": true
+        },
+        {
+          "name": "xls_mint",
+          "writable": true
+        },
+        {
+          "name": "lxr_mint"
+        },
+        {
+          "name": "pyth_rwa_account"
+        },
+        {
+          "name": "chainlink_rwa_account"
+        },
+        {
+          "name": "pyth_lxr_account"
+        },
+        {
+          "name": "chainlink_lxr_account"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount_xls",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "request_withdrawal",
+      "discriminator": [
+        251,
+        85,
+        121,
+        205,
+        56,
+        201,
+        12,
+        177
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "withdrawal_request",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  105,
+                  116,
+                  104,
+                  100,
+                  114,
+                  97,
+                  119,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "admin"
+              },
+              {
+                "kind": "account",
+                "path": "global_config.daily_withdrawal_amount",
+                "account": "GlobalConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "lxr_mint"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "beneficiary",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "reset_protocol_stats",
+      "discriminator": [
+        244,
+        244,
+        148,
+        155,
+        237,
+        69,
+        49,
+        131
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "revoke_operator",
+      "discriminator": [
+        185,
+        25,
+        87,
+        77,
+        88,
+        8,
+        30,
+        175
+      ],
+      "accounts": [
+        {
+          "name": "access_control",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  95,
+                  99,
+                  111,
+                  110,
+                  116,
+                  114,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true,
+          "relations": [
+            "access_control"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "operator_to_remove",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "stake_xls",
+      "discriminator": [
+        222,
+        151,
+        29,
+        223,
+        83,
+        123,
+        227,
+        58
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  117,
+                  115,
+                  101,
+                  114,
+                  95,
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_xls_account",
+          "writable": true
+        },
+        {
+          "name": "user_lxr_account",
+          "writable": true
+        },
+        {
+          "name": "xls_vault_staking",
+          "writable": true
+        },
+        {
+          "name": "lxr_vault_rewards",
+          "writable": true
+        },
+        {
+          "name": "xls_mint"
+        },
+        {
+          "name": "lxr_mint"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "toggle_module",
+      "discriminator": [
+        237,
+        106,
+        47,
+        45,
+        100,
+        216,
+        22,
+        135
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "flag_id",
+          "type": "u8"
+        },
+        {
+          "name": "enable",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "trigger_inflation",
+      "discriminator": [
+        98,
+        169,
+        27,
+        83,
+        188,
+        9,
+        120,
+        199
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "lxr_mint",
+          "writable": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "lxr_vault_rewards",
+          "writable": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "unstake_xls",
+      "discriminator": [
+        76,
+        112,
+        209,
+        203,
+        71,
+        16,
+        101,
+        154
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  117,
+                  115,
+                  101,
+                  114,
+                  95,
+                  97,
+                  99,
+                  99,
+                  111,
+                  117,
+                  110,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_xls_account",
+          "writable": true
+        },
+        {
+          "name": "user_lxr_account",
+          "writable": true
+        },
+        {
+          "name": "xls_vault_staking",
+          "writable": true
+        },
+        {
+          "name": "lxr_vault_rewards",
+          "writable": true
+        },
+        {
+          "name": "xls_mint"
+        },
+        {
+          "name": "lxr_mint"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "update_distribution_wallets",
+      "discriminator": [
+        188,
+        58,
+        103,
+        108,
+        192,
+        113,
+        24,
+        158
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "water_wallet"
+        },
+        {
+          "name": "data_latency_wallet"
+        },
+        {
+          "name": "energy_grid_wallet"
+        },
+        {
+          "name": "chips_wallet"
+        },
+        {
+          "name": "talent_wallet"
+        },
+        {
+          "name": "community_yield_wallet"
+        },
+        {
+          "name": "operations_wallet"
+        },
+        {
+          "name": "holding_wallet"
+        },
+        {
+          "name": "founder_wallet"
+        },
+        {
+          "name": "reinvestment_wallet"
+        },
+        {
+          "name": "fee_excelsior_vault"
+        },
+        {
+          "name": "fee_stable_reserve"
+        },
+        {
+          "name": "fee_founder_wallet"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "update_fee",
+      "discriminator": [
+        232,
+        253,
+        195,
+        247,
+        148,
+        212,
+        73,
+        222
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "new_fee_bps",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "upgrade_config",
+      "discriminator": [
+        129,
+        185,
+        25,
+        221,
+        96,
+        63,
+        251,
+        97
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "global_config"
+          ]
+        },
+        {
+          "name": "global_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "rwa_vault_lxr"
+        },
+        {
+          "name": "xls_vault_supply"
+        },
+        {
+          "name": "lxr_vault_rewards"
+        },
+        {
+          "name": "new_xls_mint"
+        },
+        {
+          "name": "new_lxr_mint"
+        },
+        {
+          "name": "usdx_mint"
+        },
+        {
+          "name": "usdx_reserve"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "new_interval",
+          "type": "i64"
+        },
+        {
+          "name": "new_rate_bps",
+          "type": "u16"
+        },
+        {
+          "name": "pyth_oracle",
+          "type": "pubkey"
+        },
+        {
+          "name": "chainlink_oracle",
+          "type": "pubkey"
+        },
+        {
+          "name": "staleness",
+          "type": "i64"
+        },
+        {
+          "name": "daily_limit",
+          "type": "u16"
+        },
+        {
+          "name": "timelock_limit",
+          "type": "u16"
+        },
+        {
+          "name": "timelock_duration",
+          "type": "i64"
+        },
+        {
+          "name": "new_module_flags",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "AccessControl",
+      "discriminator": [
+        147,
+        81,
+        178,
+        92,
+        223,
+        66,
+        181,
+        132
+      ]
+    },
+    {
+      "name": "ClaimStatus",
+      "discriminator": [
+        22,
+        183,
+        249,
+        157,
+        247,
+        95,
+        150,
+        96
+      ]
+    },
+    {
+      "name": "Distributor",
+      "discriminator": [
+        90,
+        90,
+        217,
+        147,
+        6,
+        32,
+        135,
+        4
+      ]
+    },
+    {
+      "name": "GlobalConfig",
+      "discriminator": [
+        149,
+        8,
+        156,
+        202,
+        160,
+        252,
+        176,
+        217
+      ]
+    },
+    {
+      "name": "UserAccount",
+      "discriminator": [
+        211,
+        33,
+        136,
+        16,
+        186,
+        110,
+        242,
+        127
+      ]
+    },
+    {
+      "name": "VestingSchedule",
+      "discriminator": [
+        130,
+        200,
+        173,
+        148,
+        39,
+        75,
+        243,
+        147
+      ]
+    },
+    {
+      "name": "WithdrawalRequest",
+      "discriminator": [
+        242,
+        88,
+        147,
+        173,
+        182,
+        62,
+        229,
+        193
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InsufficientFunds",
+      "msg": "Insufficient funds."
+    },
+    {
+      "code": 6001,
+      "name": "InvalidProof",
+      "msg": "Invalid Merkle proof."
+    },
+    {
+      "code": 6002,
+      "name": "InflationNotReady",
+      "msg": "Inflation trigger not yet ready."
+    },
+    {
+      "code": 6003,
+      "name": "Unauthorized",
+      "msg": "Unauthorized access."
+    },
+    {
+      "code": 6004,
+      "name": "Paused",
+      "msg": "Protocol is paused."
+    },
+    {
+      "code": 6005,
+      "name": "InvalidVestingParams",
+      "msg": "Invalid Vesting Parameters."
+    },
+    {
+      "code": 6006,
+      "name": "DailyLimitReached",
+      "msg": "Daily withdrawal limit reached."
+    },
+    {
+      "code": 6007,
+      "name": "TimelockRequired",
+      "msg": "Withdrawal amount exceeds timelock threshold. Request submitted."
+    },
+    {
+      "code": 6008,
+      "name": "WithdrawalLocked",
+      "msg": "Withdrawal request is still locked."
+    },
+    {
+      "code": 6009,
+      "name": "InvalidRequestStatus",
+      "msg": "Invalid withdrawal request status."
+    },
+    {
+      "code": 6010,
+      "name": "ModulePaused",
+      "msg": "Module is paused via Regulatory Firewall."
+    },
+    {
+      "code": 6011,
+      "name": "RwaOracleInvalid",
+      "msg": "RWA Oracle Data is Invalid or Stale."
+    },
+    {
+      "code": 6012,
+      "name": "ArithmeticError",
+      "msg": "Arithmetic Error (Overflow/Underflow)."
+    },
+    {
+      "code": 6013,
+      "name": "DailyLimitExceeded",
+      "msg": "Daily withdrawal limit exceeded."
+    }
+  ],
+  "types": [
+    {
+      "name": "AccessControl",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "paused",
+            "type": "bool"
+          },
+          {
+            "name": "operators",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "minters",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ClaimStatus",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "is_claimed",
+            "type": "bool"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "claimant",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Distributor",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "root",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "total_claimed",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GlobalConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "xls_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "lxr_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "rwa_vault_lxr",
+            "type": "pubkey"
+          },
+          {
+            "name": "xls_vault_supply",
+            "type": "pubkey"
+          },
+          {
+            "name": "rwa_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "water_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "data_latency_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "energy_grid_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "chips_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "talent_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "community_yield_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "operations_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "holding_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "founder_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "reinvestment_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "buyback_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "fee_excelsior_vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "fee_stable_reserve",
+            "type": "pubkey"
+          },
+          {
+            "name": "fee_founder_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "fee_basis_points",
+            "type": "u16"
+          },
+          {
+            "name": "max_fee_basis_points",
+            "type": "u16"
+          },
+          {
+            "name": "total_lxr_burned",
+            "type": "u64"
+          },
+          {
+            "name": "total_staked_xls",
+            "type": "u64"
+          },
+          {
+            "name": "acc_rewards_per_share",
+            "type": "u128"
+          },
+          {
+            "name": "last_inflation_timestamp",
+            "type": "i64"
+          },
+          {
+            "name": "lxr_vault_rewards",
+            "type": "pubkey"
+          },
+          {
+            "name": "pyth_oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "chainlink_oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "oracle_staleness_threshold",
+            "type": "i64"
+          },
+          {
+            "name": "max_daily_withdrawal_bps",
+            "type": "u16"
+          },
+          {
+            "name": "timelock_threshold_bps",
+            "type": "u16"
+          },
+          {
+            "name": "timelock_duration",
+            "type": "i64"
+          },
+          {
+            "name": "daily_withdrawal_amount",
+            "type": "u64"
+          },
+          {
+            "name": "last_withdrawal_reset",
+            "type": "i64"
+          },
+          {
+            "name": "inflation_interval",
+            "type": "i64"
+          },
+          {
+            "name": "inflation_rate_bps",
+            "type": "u16"
+          },
+          {
+            "name": "module_flags",
+            "type": "u8"
+          },
+          {
+            "name": "usdx_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "usdx_reserve",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InitParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "fee_basis_points",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "staked_xls",
+            "type": "u64"
+          },
+          {
+            "name": "reward_debt",
+            "type": "u128"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VestingSchedule",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "beneficiary",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "total_amount",
+            "type": "u64"
+          },
+          {
+            "name": "released_amount",
+            "type": "u64"
+          },
+          {
+            "name": "start_time",
+            "type": "i64"
+          },
+          {
+            "name": "cliff_time",
+            "type": "i64"
+          },
+          {
+            "name": "end_time",
+            "type": "i64"
+          },
+          {
+            "name": "tge_percentage",
+            "type": "u16"
+          },
+          {
+            "name": "is_private_investor",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WithdrawalRequest",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "beneficiary",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "unlock_at",
+            "type": "i64"
+          },
+          {
+            "name": "status",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

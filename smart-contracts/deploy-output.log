@@ -1,0 +1,130 @@
+Deploying cluster: https://api.devnet.solana.com
+Upgrade authority: ./wallets/admin.json
+Deploying program "excelsior"...
+Program path: /home/itsroosevelt_/excelsior-project/smart-contracts/target/deploy/excelsior.so...
+Program Id: 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv
+
+Signature: 3B2he3k4zLMZ3MfJLAPaGyaZRNUNy4Jb2z3phGpwaQobSaCyhd5qzeeJ1fUgarpyDUrggfJmUMpCV9Ea9Z51U7W
+
+Waiting for program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv to be confirmed...
+Program confirmed on-chain
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+. Retrying...
+Error: Error creating IDL account: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x1004; 4 log messages:
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv invoke [1]
+  Program log: AnchorError occurred. Error Code: DeclaredProgramIdMismatch. Error Number: 4100. Error Message: The declared program id does not match the actual program id.
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv consumed 2421 of 200000 compute units
+  Program 9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv failed: custom program error: 0x1004
+

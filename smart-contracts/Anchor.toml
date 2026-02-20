@@ -1,0 +1,33 @@
+[toolchain]
+anchor_version = "0.32.1"
+solana_version = "3.0.10"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+excelsior = "9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv"
+
+[programs.mainnet-beta]
+excelsior = "9d7SeR8Njzh32piG1HBxNR33VJJYVroubsQKKjkBjmfv"
+
+[programs.localnet]
+excelsior = "BqmCp11bN5aDF6XdCEEnLUZroxTPMod6xrap78zKmvap"
+
+[registry]
+url = "https://api.devnet.solana.com"
+
+[provider]
+cluster = "devnet"
+wallet = "./wallets/admin.json"
+
+[scripts]
+create-tokens = "npx ts-node scripts/create_tokens.ts"
+init-dist = "npx ts-node scripts/init_distribution.ts"
+test = "bash scripts/test_runner.sh"
+
+[test]
+startup_wait = 100000
+shutdown_wait = 2000
+upgradeable = false

@@ -1,0 +1,6 @@
+Deploying cluster: https://api.devnet.solana.com
+Upgrade authority: ./wallets/admin.json
+Deploying program "excelsior"...
+Program path: /home/itsroosevelt_/excelsior-project/smart-contracts/target/deploy/excelsior.so...
+Error: Unable to open program file: No such file or directory (os error 2)
+There was a problem deploying: Output { status: ExitStatus(unix_wait_status(256)), stdout: "", stderr: "" }.
